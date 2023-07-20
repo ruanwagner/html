@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  background-color: #7c3aed;
+}
+
+.--date-picker {
+  font-family: 'Lato', sans-serif;
+  padding: 1.6rem;
+  background-color: white;
+  box-shadow: 0.4rem 0.4rem 1.6rem rgba(0 0 0 / .16);
+  border-radius: 0.8rem;
+  width: fit-content;
+  display: grid;
+  grid-template-rows: 2rem 1fr;
+  gap: 1.2rem;
+}
+
+.--date-picker header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  color: #333;
+}
+
+.--date-picker header i {
+  padding: 0.8rem;
+  border-radius: 50%;
+  color: #666;
+}
+
+.--date-picker header i:hover {
+  background-color: #ece0fd;
+}
+
+.--date-picker main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+}
+
+.--date-picker main > div {
+  width: 4rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  cursor: pointer;
+  border-radius: 0.3rem;
+  transition: all 0.3s;
+}
+
+.--date-picker main > div:hover {
+  background-color: #ece0fd;
+}
+
+.--date-picker main > div.active {
+  background: #6200ee;
+  font-weight: 700;
+  color: white;
+  position: relative;
+}
+
+.--date-picker main > div.active::after {
+  content: '';
+  width: 0.2rem;
+  height: 0.2rem;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0.3rem;
+}
